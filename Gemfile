@@ -4,8 +4,6 @@ group :production do
 
 end
 
-require 'rest_client'
-
 gem 'yelp', require: 'yelp'
 
 gem 'geocoder'
