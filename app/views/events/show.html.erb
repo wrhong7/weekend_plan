@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>Weekend-Plan</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../../dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="jumbotron-narrow.css" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="../../assets/js/ie-emulation-modes-warning.js"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <div class="container">
+      <div class="header clearfix">
+        <h3 class="text-muted">Choose Events</h3>
+        <h5 class="text-muted">Please click the "Map the Location" button for the exact location </h5>
+      </div>
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+  </body>
+</html>
+
+
+
+
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+<div class="container">
+	<div class="row">
+		<%= form_for @recommendation do |f| %>
+			<div class="col-lg-4 col-sm-12">
+            <div class="card hovercard">
+                <div class="cardheader">
+                </div>
+                <div class="avatar">
+                    <img alt="" src="https://s3.amazonaws.com/won.hong.bucket/dpzDUkJrTHb71Yla1EzF_IMG_4098.jpg">
+                </div>
+                <div class="info">       	
+										<%= f.hidden_field :event_1_name, value:@eventful_concert_output["event_name_1"], size: 30 %>
+										<%= f.hidden_field :event_1_date, value:@eventful_concert_output["date_1"], size: 15 %>
+										<%= f.hidden_field :event_1_location, value:@eventful_concert_output["venue_name_1"], size: 20 %>	
+										<%= f.hidden_field :event_1_address, value:@eventful_concert_output["venue_address_1"], size: 40 %>
+										<%= f.hidden_field :event_1_url, value:@eventful_concert_output["event_url_1"] %>
+										<%= f.hidden_field :event_1_desc, value:@eventful_concert_output["description_1"] %>
+                    <div class="title">
+                        <a target="_blank" href=<%= @eventful_concert_output["event_url_1"] %>><%= @eventful_concert_output["event_name_1"] %></a>
+                    </div>
+                    <div class="desc">When? <%= @eventful_concert_output["date_1"] %></div>
+                    <div class="desc">Where? <%= @eventful_concert_output["venue_name_1"] %></div>
+                    <div class="desc"><%= @eventful_concert_output["venue_address_1"] %></div>
+                    <%= f.check_box :event_1_check_box, as: :boolean %>  
+                </div>
+            </div>
+
+            <div class="card hovercard">
+                <div class="cardheader">
+                </div>
+                <div class="avatar">
+                    <img alt="" src="https://s3.amazonaws.com/won.hong.bucket/dpzDUkJrTHb71Yla1EzF_IMG_4098.jpg">
+                </div>
+                <div class="info">       	
+										<%= f.hidden_field :event_2_name, value:@eventful_concert_output["event_name_2"], size: 30 %>
+										<%= f.hidden_field :event_2_date, value:@eventful_concert_output["date_2"], size: 15 %>
+										<%= f.hidden_field :event_2_location, value:@eventful_concert_output["venue_name_2"], size: 20 %>	
+										<%= f.hidden_field :event_2_address, value:@eventful_concert_output["venue_address_2"], size: 40 %>
+										<%= f.hidden_field :event_2_url, value:@eventful_concert_output["event_url_2"] %>
+										<%= f.hidden_field :event_2_desc, value:@eventful_concert_output["description_2"] %>
+                    <div class="title">
+                        <a target="_blank" href=<%= @eventful_concert_output["event_url_2"] %>><%= @eventful_concert_output["event_name_2"] %></a>
+                    </div>
+                    <div class="desc">When? <%= @eventful_concert_output["date_2"] %></div>
+                    <div class="desc">Where? <%= @eventful_concert_output["venue_name_2"] %></div>
+                    <div class="desc"><%= @eventful_concert_output["venue_address_2"] %></div>
+                    <%= f.check_box :event_2_check_box, as: :boolean %>  
+                </div>
+            </div>
+
+            <div class="card hovercard">
+                <div class="cardheader">
+                </div>
+                <div class="avatar">
+                    <img alt="" src="https://s3.amazonaws.com/won.hong.bucket/dpzDUkJrTHb71Yla1EzF_IMG_4098.jpg">
+                </div>
+                <div class="info">       	
+										<%= f.hidden_field :event_3_name, value:@eventful_concert_output["event_name_3"], size: 30 %>
+										<%= f.hidden_field :event_3_date, value:@eventful_concert_output["date_3"], size: 15 %>
+										<%= f.hidden_field :event_3_location, value:@eventful_concert_output["venue_name_3"], size: 20 %>	
+										<%= f.hidden_field :event_3_address, value:@eventful_concert_output["venue_address_3"], size: 40 %>
+										<%= f.hidden_field :event_3_url, value:@eventful_concert_output["event_url_3"] %>
+										<%= f.hidden_field :event_3_desc, value:@eventful_concert_output["description_3"] %>
+                    <div class="title">
+                        <a target="_blank" href=<%= @eventful_concert_output["event_url_3"] %>><%= @eventful_concert_output["event_name_3"] %></a>
+                    </div>
+                    <div class="desc">When? <%= @eventful_concert_output["date_3"] %></div>
+                    <div class="desc">Where? <%= @eventful_concert_output["venue_name_3"] %></div>
+                    <div class="desc"><%= @eventful_concert_output["venue_address_3"] %></div>
+                    <%= f.check_box :event_3_check_box, as: :boolean %>  
+                </div>
+            </div>
+
+            <div class="card hovercard">
+                <div class="cardheader">
+                </div>
+                <div class="avatar">
+                    <img alt="" src="https://s3.amazonaws.com/won.hong.bucket/dpzDUkJrTHb71Yla1EzF_IMG_4098.jpg">
+                </div>
+                <div class="info">       	
+										<%= f.hidden_field :event_4_name, value:@eventful_concert_output["event_name_4"], size: 30 %>
+										<%= f.hidden_field :event_4_date, value:@eventful_concert_output["date_4"], size: 15 %>
+										<%= f.hidden_field :event_4_location, value:@eventful_concert_output["venue_name_4"], size: 20 %>	
+										<%= f.hidden_field :event_4_address, value:@eventful_concert_output["venue_address_4"], size: 40 %>
+										<%= f.hidden_field :event_4_url, value:@eventful_concert_output["event_url_4"] %>
+										<%= f.hidden_field :event_4_desc, value:@eventful_concert_output["description_4"] %>
+                    <div class="title">
+                        <a target="_blank" href=<%= @eventful_concert_output["event_url_4"] %>><%= @eventful_concert_output["event_name_4"] %></a>
+                    </div>
+                    <div class="desc">When? <%= @eventful_concert_output["date_4"] %></div>
+                    <div class="desc">Where? <%= @eventful_concert_output["venue_name_4"] %></div>
+                    <div class="desc"><%= @eventful_concert_output["venue_address_4"] %></div>
+                    <%= f.check_box :event_4_check_box, as: :boolean %>  
+                </div>
+            </div>
+
+            <div class="card hovercard">
+                <div class="cardheader">
+                </div>
+                <div class="avatar">
+                    <img alt="" src="https://s3.amazonaws.com/won.hong.bucket/dpzDUkJrTHb71Yla1EzF_IMG_4098.jpg">
+                </div>
+                <div class="info">       	
+										<%= f.hidden_field :event_5_name, value:@eventful_concert_output["event_name_5"], size: 30 %>
+										<%= f.hidden_field :event_5_date, value:@eventful_concert_output["date_5"], size: 15 %>
+										<%= f.hidden_field :event_5_location, value:@eventful_concert_output["venue_name_5"], size: 20 %>	
+										<%= f.hidden_field :event_5_address, value:@eventful_concert_output["venue_address_5"], size: 40 %>
+										<%= f.hidden_field :event_5_url, value:@eventful_concert_output["event_url_5"] %>
+										<%= f.hidden_field :event_5_desc, value:@eventful_concert_output["description_5"] %>
+                    <div class="title">
+                        <a target="_blank" href=<%= @eventful_concert_output["event_url_5"] %>><%= @eventful_concert_output["event_name_5"] %></a>
+                    </div>
+                    <div class="desc">When? <%= @eventful_concert_output["date_5"] %></div>
+                    <div class="desc">Where? <%= @eventful_concert_output["venue_name_5"] %></div>
+                    <div class="desc"><%= @eventful_concert_output["venue_address_5"] %></div>
+                    <%= f.check_box :event_5_check_box, as: :boolean %>  
+                </div>
+            </div>
+
+        </div>
+
+    		<div class="col-lg-4 col-sm-12">
+		            <div class="card hovercard">
+		                <div class="cardheader">
+		                </div>
+		                <div class="avatar">
+		                    <img alt="" src="http://www.brunel.ac.uk/__data/assets/image/0009/317862/SSS_CCSR_dreamstime_s_10939035.jpg">
+		                </div>
+		                <div class="info">       	
+												<%= f.hidden_field :event_6_name, value:@eventful_comedy_output["event_name_1"], size: 30 %>
+												<%= f.hidden_field :event_6_date, value:@eventful_comedy_output["date_1"], size: 15 %>
+												<%= f.hidden_field :event_6_location, value:@eventful_comedy_output["venue_name_1"], size: 20 %>	
+												<%= f.hidden_field :event_6_address, value:@eventful_comedy_output["venue_address_1"], size: 40 %>
+												<%= f.hidden_field :event_6_url, value:@eventful_comedy_output["event_url_1"] %>
+												<%= f.hidden_field :event_6_desc, value:@eventful_comedy_output["description_1"] %>
+		                    <div class="title">
+		                        <a target="_blank" href=<%= @eventful_comedy_output["event_url_1"] %>><%= @eventful_comedy_output["event_name_1"] %></a>
+		                    </div>
+		                    <div class="desc">When? <%= @eventful_comedy_output["date_1"] %></div>
+		                    <div class="desc">Where? <%= @eventful_comedy_output["venue_name_1"] %></div>
+		                    <div class="desc"><%= @eventful_comedy_output["venue_address_1"] %></div>
+		                    <%= f.check_box :event_6_check_box, as: :boolean %>  
+		                </div>
+		            </div>
+
+		            <div class="card hovercard">
+		                <div class="cardheader">
+		                </div>
+		                <div class="avatar">
+		                    <img alt="" src="http://www.brunel.ac.uk/__data/assets/image/0009/317862/SSS_CCSR_dreamstime_s_10939035.jpg">
+		                </div>
+		                <div class="info">       	
+												<%= f.hidden_field :event_7_name, value:@eventful_comedy_output["event_name_2"], size: 30 %>
+												<%= f.hidden_field :event_7_date, value:@eventful_comedy_output["date_2"], size: 15 %>
+												<%= f.hidden_field :event_7_location, value:@eventful_comedy_output["venue_name_2"], size: 20 %>	
+												<%= f.hidden_field :event_7_address, value:@eventful_comedy_output["venue_address_2"], size: 40 %>
+												<%= f.hidden_field :event_7_url, value:@eventful_comedy_output["event_url_2"] %>
+												<%= f.hidden_field :event_7_desc, value:@eventful_comedy_output["description_2"] %>
+		                    <div class="title">
+		                        <a target="_blank" href=<%= @eventful_comedy_output["event_url_2"] %>><%= @eventful_comedy_output["event_name_2"] %></a>
+		                    </div>
+		                    <div class="desc">When? <%= @eventful_comedy_output["date_2"] %></div>
+		                    <div class="desc">Where? <%= @eventful_comedy_output["venue_name_2"] %></div>
+		                    <div class="desc"><%= @eventful_comedy_output["venue_address_2"] %></div>
+		                    <%= f.check_box :event_7_check_box, as: :boolean %>  
+		                </div>
+		            </div>
+
+		            <div class="card hovercard">
+		                <div class="cardheader">
+		                </div>
+		                <div class="avatar">
+		                    <img alt="" src="http://www.brunel.ac.uk/__data/assets/image/0009/317862/SSS_CCSR_dreamstime_s_10939035.jpg">
+		                </div>
+		                <div class="info">       	
+												<%= f.hidden_field :event_8_name, value:@eventful_comedy_output["event_name_3"], size: 30 %>
+												<%= f.hidden_field :event_8_date, value:@eventful_comedy_output["date_3"], size: 15 %>
+												<%= f.hidden_field :event_8_location, value:@eventful_comedy_output["venue_name_3"], size: 20 %>	
+												<%= f.hidden_field :event_8_address, value:@eventful_comedy_output["venue_address_3"], size: 40 %>
+												<%= f.hidden_field :event_8_url, value:@eventful_comedy_output["event_url_3"] %>
+												<%= f.hidden_field :event_8_desc, value:@eventful_comedy_output["description_3"] %>
+		                    <div class="title">
+		                        <a target="_blank" href=<%= @eventful_comedy_output["event_url_3"] %>><%= @eventful_comedy_output["event_name_3"] %></a>
+		                    </div>
+		                    <div class="desc">When? <%= @eventful_comedy_output["date_3"] %></div>
+		                    <div class="desc">Where? <%= @eventful_comedy_output["venue_name_3"] %></div>
+		                    <div class="desc"><%= @eventful_comedy_output["venue_address_3"] %></div>
+		                    <%= f.check_box :event_8_check_box, as: :boolean %>  
+		                </div>
+		            </div>
+
+		            <div class="card hovercard">
+		                <div class="cardheader">
+		                </div>
+		                <div class="avatar">
+		                    <img alt="" src="http://www.brunel.ac.uk/__data/assets/image/0009/317862/SSS_CCSR_dreamstime_s_10939035.jpg">
+		                </div>
+		                <div class="info">       	
+												<%= f.hidden_field :event_9_name, value:@eventful_comedy_output["event_name_4"], size: 30 %>
+												<%= f.hidden_field :event_9_date, value:@eventful_comedy_output["date_4"], size: 15 %>
+												<%= f.hidden_field :event_9_location, value:@eventful_comedy_output["venue_name_4"], size: 20 %>	
+												<%= f.hidden_field :event_9_address, value:@eventful_comedy_output["venue_address_4"], size: 40 %>
+												<%= f.hidden_field :event_9_url, value:@eventful_comedy_output["event_url_4"] %>
+												<%= f.hidden_field :event_9_desc, value:@eventful_comedy_output["description_4"] %>
+		                    <div class="title">
+		                        <a target="_blank" href=<%= @eventful_comedy_output["event_url_4"] %>><%= @eventful_comedy_output["event_name_4"] %></a>
+		                    </div>
+		                    <div class="desc">When? <%= @eventful_comedy_output["date_4"] %></div>
+		                    <div class="desc">Where? <%= @eventful_comedy_output["venue_name_4"] %></div>
+		                    <div class="desc"><%= @eventful_comedy_output["venue_address_4"] %></div>
+		                    <%= f.check_box :event_9_check_box, as: :boolean %>  
+		                </div>
+		            </div>
+
+		            <div class="card hovercard">
+		                <div class="cardheader">
+		                </div>
+		                <div class="avatar">
+		                    <img alt="" src="http://www.brunel.ac.uk/__data/assets/image/0009/317862/SSS_CCSR_dreamstime_s_10939035.jpg">
+		                </div>
+		                <div class="info">       	
+												<%= f.hidden_field :event_10_name, value:@eventful_comedy_output["event_name_5"], size: 30 %>
+												<%= f.hidden_field :event_10_date, value:@eventful_comedy_output["date_5"], size: 15 %>
+												<%= f.hidden_field :event_10_location, value:@eventful_comedy_output["venue_name_5"], size: 20 %>	
+												<%= f.hidden_field :event_10_address, value:@eventful_comedy_output["venue_address_5"], size: 40 %>
+												<%= f.hidden_field :event_10_url, value:@eventful_comedy_output["event_url_5"] %>
+												<%= f.hidden_field :event_10_desc, value:@eventful_comedy_output["description_5"] %>
+		                    <div class="title">
+		                        <a target="_blank" href=<%= @eventful_comedy_output["event_url_5"] %>><%= @eventful_comedy_output["event_name_5"] %></a>
+		                    </div>
+		                    <div class="desc">When? <%= @eventful_comedy_output["date_5"] %></div>
+		                    <div class="desc">Where? <%= @eventful_comedy_output["venue_name_5"] %></div>
+		                    <div class="desc"><%= @eventful_comedy_output["venue_address_5"] %></div>
+		                    <%= f.check_box :event_10_check_box, as: :boolean %>  
+		                </div>
+		            </div>
+        </div>
+
+    	<div class="col-lg-4 col-sm-12">
+
+            <div class="card hovercard">
+                <div class="cardheader">
+                </div>
+                <div class="avatar">
+                    <img alt="" src="https://s3.amazonaws.com/won.hong.bucket/photo-1432139509613-5c4255815697.jpeg">
+                </div>
+                <div class="info">
+									<%= f.hidden_field :dine_1_name, value:@opentable_output["dine_1_name"] %>
+									<%= f.hidden_field :dine_1_price, value:@opentable_output["dine_1_price"] %>
+									<%= f.hidden_field :dine_1_address, value:@opentable_output["dine_1_address"] %>
+									<%= f.hidden_field :dine_1_url, value:@opentable_output["dine_1_url"] %>
+                    <div class="title">
+                        <a target="_blank" href=<%= @opentable_output["dine_1_url"] %>><%= @opentable_output["dine_1_name"] %></a>
+                    </div>
+                    <div class="desc">Price Level? <%= @opentable_output["dine_1_price"] %> (out of 4)</div>
+                    <div class="desc">Where? <%= @opentable_output["dine_name_1"] %></div>
+                    <div class="desc"><%= @opentable_output["dine_1_address"] %></div>
+                    <%= f.check_box :dine_1_check_box, as: :boolean %>  
+                </div>
+            </div>
+
+            <div class="card hovercard">
+                <div class="cardheader">
+                </div>
+                <div class="avatar">
+                    <img alt="" src="https://s3.amazonaws.com/won.hong.bucket/photo-1432139509613-5c4255815697.jpeg">
+                </div>
+                <div class="info">
+									<%= f.hidden_field :dine_2_name, value:@opentable_output["dine_2_name"] %>
+									<%= f.hidden_field :dine_2_price, value:@opentable_output["dine_2_price"] %>
+									<%= f.hidden_field :dine_2_address, value:@opentable_output["dine_2_address"] %>
+									<%= f.hidden_field :dine_2_url, value:@opentable_output["dine_2_url"] %>
+                    <div class="title">
+                        <a target="_blank" href=<%= @opentable_output["dine_2_url"] %>><%= @opentable_output["dine_2_name"] %></a>
+                    </div>
+                    <div class="desc">Price Level? <%= @opentable_output["dine_2_price"] %> (out of 4)</div>
+                    <div class="desc">Where? <%= @opentable_output["dine_name_2"] %></div>
+                    <div class="desc"><%= @opentable_output["dine_2_address"] %></div>
+                    <%= f.check_box :dine_2_check_box, as: :boolean %>  
+                </div>
+            </div>
+
+            <div class="card hovercard">
+                <div class="cardheader">
+                </div>
+                <div class="avatar">
+                    <img alt="" src="https://s3.amazonaws.com/won.hong.bucket/photo-1432139509613-5c4255815697.jpeg">
+                </div>
+                <div class="info">
+									<%= f.hidden_field :dine_3_name, value:@opentable_output["dine_3_name"] %>
+									<%= f.hidden_field :dine_3_price, value:@opentable_output["dine_3_price"] %>
+									<%= f.hidden_field :dine_3_address, value:@opentable_output["dine_3_address"] %>
+									<%= f.hidden_field :dine_3_url, value:@opentable_output["dine_3_url"] %>
+                    <div class="title">
+                        <a target="_blank" href=<%= @opentable_output["dine_3_url"] %>><%= @opentable_output["dine_3_name"] %></a>
+                    </div>
+                    <div class="desc">Price Level? <%= @opentable_output["dine_3_price"] %> (out of 4)</div>
+                    <div class="desc">Where? <%= @opentable_output["dine_name_3"] %></div>
+                    <div class="desc"><%= @opentable_output["dine_3_address"] %></div>
+                    <%= f.check_box :dine_3_check_box, as: :boolean %>  
+                </div>
+            </div>
+
+             <div class="card hovercard">
+                <div class="cardheader">
+                </div>
+                <div class="avatar">
+                    <img alt="" src="https://s3.amazonaws.com/won.hong.bucket/photo-1432139509613-5c4255815697.jpeg">
+                </div>
+                <div class="info">
+									<%= f.hidden_field :dine_4_name, value:@opentable_output["dine_4_name"] %>
+									<%= f.hidden_field :dine_4_price, value:@opentable_output["dine_4_price"] %>
+									<%= f.hidden_field :dine_4_address, value:@opentable_output["dine_4_address"] %>
+									<%= f.hidden_field :dine_4_url, value:@opentable_output["dine_4_url"] %>
+                    <div class="title">
+                        <a target="_blank" href=<%= @opentable_output["dine_4_url"] %>><%= @opentable_output["dine_4_name"] %></a>
+                    </div>
+                    <div class="desc">Price Level? <%= @opentable_output["dine_4_price"] %> (out of 4)</div>
+                    <div class="desc">Where? <%= @opentable_output["dine_name_4"] %></div>
+                    <div class="desc"><%= @opentable_output["dine_4_address"] %></div>
+                    <%= f.check_box :dine_4_check_box, as: :boolean %>  
+                </div>
+            </div>
+
+            <div class="card hovercard">
+                <div class="cardheader">
+                </div>
+                <div class="avatar">
+                    <img alt="" src="https://s3.amazonaws.com/won.hong.bucket/photo-1432139509613-5c4255815697.jpeg">
+                </div>
+                <div class="info">
+									<%= f.hidden_field :dine_5_name, value:@opentable_output["dine_5_name"] %>
+									<%= f.hidden_field :dine_5_price, value:@opentable_output["dine_5_price"] %>
+									<%= f.hidden_field :dine_5_address, value:@opentable_output["dine_5_address"] %>
+									<%= f.hidden_field :dine_5_url, value:@opentable_output["dine_5_url"] %>
+                    <div class="title">
+                        <a target="_blank" href=<%= @opentable_output["dine_5_url"] %>><%= @opentable_output["dine_5_name"] %></a>
+                    </div>
+                    <div class="desc">Price Level? <%= @opentable_output["dine_5_price"] %> (out of 4)</div>
+                    <div class="desc">Where? <%= @opentable_output["dine_name_5"] %></div>
+                    <div class="desc"><%= @opentable_output["dine_5_address"] %></div>
+                    <%= f.check_box :dine_5_check_box, as: :boolean %>  
+                </div>
+            </div>   
+        </div>
+        <p class="submitbutton"> <%= f.submit "Give Me More Info on Selected Recommendations" %> </p>
+      <% end %>
+        
+	</div>
+</div>
+      <footer class="footer">
+      	<p> Next step: We will generate a map and send the location information to your email or phone </p>
+        <p>&copy;Weekend-Plan is an unaffiliated research platform using Eventful and Opentable API</p>
+      </footer>
+
+    </div> <!-- /container -->
+
+</html>
