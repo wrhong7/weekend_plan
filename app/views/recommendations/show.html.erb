@@ -34,83 +34,13 @@
       </div>
 
     </div> <!-- /container -->
-
-
   </body>
-</html>
 
 
-<div class="container">
-  <% for index in @gmap_address_index %>
-    <%= form_for @mapnew do |f| %>
-      <ul class="list-group">
-          <li class="list-group-item">
-              <div class="media">
-                <a class="media-left" href="#">
-                    <div style="width: 64px; height: 64px"> <%= f.submit "Add" %> </div>
-                </a>
-                  <div class="media-body">
-                      <h5 class="media-heading"><%= @eventful_concert_output_array[index][0][12...-1] %></h4>
-                      <p class="list-group-item-text"> <%= @eventful_concert_output_array[index][1] %> </p>
-                      <p class="list-group-item-text"> <%= @eventful_concert_output_array[index][2] %> </p>
-                      <%= f.hidden_field :title, value:@eventful_concert_output_array[index][0][17...-1] %>
-                      <%= f.hidden_field :address, value:@eventful_concert_output_array[index][2][10...-1] %>
-                      <%= f.hidden_field :recommendation_id, value:@recommendation.id %>
-                  </div>
-              </div>
-          </li>    
-      </ul>
-    <% end %>
-<% end %>
-</div>
 
-<div class="container">
-  <% for index in @gmap_address_index_2 %>
-    <%= form_for @mapnew do |f| %>
-      <ul class="list-group">
-          <li class="list-group-item">
-              <div class="media">
-                <a class="media-left" href="#">
-                    <div style="width: 64px; height: 64px"> <%= f.submit "Add" %> </div>
-                </a>
-                  <div class="media-body">
-                      <h5 class="list-group-item-heading"> <%= @eventful_comedy_output_array[index][0] %> </h6>
-                      <p class="list-group-item-text"> <%= @eventful_comedy_output_array[index][1] %> </p>
-                      <p class="list-group-item-text"> <%= @eventful_comedy_output_array[index][2] %> </p>
-                      <%= f.hidden_field :title, value:@eventful_comedy_output_array[index][0][17...-1] %>
-                      <%= f.hidden_field :address, value:@eventful_comedy_output_array[index][2][10...-1] %>
-                      <%= f.hidden_field :recommendation_id, value:@recommendation.id%>
-                  </div>
-              </div>
-          </li>    
-      </ul>
-    <% end %>
-  <% end %>
-</div>
 
-<div class="container">
-  <% for index in @gmap_address_index_3 %>
-    <%= form_for @mapnew do |f| %>
-      <ul class="list-group">
-          <li class="list-group-item">
-              <div class="media">
-                <a class="media-left" href="#">
-                    <div style="width: 64px; height: 64px"> <%= f.submit "Add" %> </div>
-                </a>
-                  <div class="media-body">
-                    <h5 class="list-group-item-heading"> <%= @opentable_restaurant_output_array[index][0] %> </h6>
-                    <p class="list-group-item-text"> <%= @opentable_restaurant_output_array[index][1] %> </p>
-                    <p class="list-group-item-text"> <%= @opentable_restaurant_output_array[index][2] %> </p>
-                    <%= f.hidden_field :title, value:@opentable_restaurant_output_array[index][0][17...-1] %>
-                    <%= f.hidden_field :address, value:@opentable_restaurant_output_array[index][2][10...-1] %>
-                    <%= f.hidden_field :recommendation_id, value:@recommendation.id%>
-                  </div>
-              </div>
-          </li>    
-      </ul>
-    <% end %>
-  <% end %>
-</div>
+
+
 
 <footer class="footer">
   <p>&copy;Weekend-Plan is an Academic Research Platform using Eventful and Opentable API</p>
