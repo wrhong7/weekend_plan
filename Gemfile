@@ -4,8 +4,6 @@ group :production do
 	gem 'pg'
 end
 
-gem 'yelp', require: 'yelp'
-
 gem 'geocoder'
 
 gem 'gmaps4rails'
