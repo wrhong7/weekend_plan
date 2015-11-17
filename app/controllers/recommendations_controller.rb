@@ -14,6 +14,8 @@ class RecommendationsController < ApplicationController
   end
 
   def show
+    @map = Map.where(:recommendation_id => params[:id])
+    @mapnew = Map.new
 
 
 
