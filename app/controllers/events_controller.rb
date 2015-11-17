@@ -1,5 +1,4 @@
 class EventsController < ApplicationController
-  require 'active_support/cache/dalli_store23'
   require "rest-client"
   require "json"
 
