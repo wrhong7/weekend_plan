@@ -3,7 +3,7 @@ class MapsController < ApplicationController
   end
 
   def show
-    # @maps = Map.where(:recommendation_id => 87)
+    @maps = Map.where(:recommendation_id => 87)
     @map = Map.find(params[:id])
 		# @hash = Gmaps4rails.build_markers(@map) do |map, marker|
 		#   marker.lat map.latitude
