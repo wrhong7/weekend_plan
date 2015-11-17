@@ -9,7 +9,7 @@ class EventsController < ApplicationController
   end
 
   def index
-  	@event = Event.new
+    @event = Event.new
     @random_quote = ["Let's plan for the night of your life!", "Weekend is too short to do nothing!", "Monday is coming! Let's do something!"][rand(3)]
     @instruction = "We recommend events around your neighborhood!"
   end
