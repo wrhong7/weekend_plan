@@ -1,4 +1,5 @@
 Rails.application.configure do
+  require 'active_support/cache/dalli_store23'
   config.cache_store = :dalli_store,
                     (ENV["MEMCACHIER_SERVERS"] || "").split(","),
                     {:username => ENV["MEMCACHIER_USERNAME"],
