@@ -1,5 +1,5 @@
 class RecommendationsController < ApplicationController
-  
+  require 'active_support/cache/dalli_store23'
   def index
     # @map = Map.where(:recommendation_id => params[:id])
     # @map.each do |map|
