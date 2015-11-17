@@ -28,11 +28,7 @@ class EventsController < ApplicationController
     eventful_api_key=ENV['EVENTFUL_API_KEY']
 		location = @event.location
     if location == "LA"
-      location = "Los Angeles"
-    elsif location == "SF"
-      location = "San Francisco"
-    elsif location == "NY" or "NYC"
-      location = "New York"      
+      location = "Los Angeles"  
     end
     location = location.gsub(' ', '+')
 
