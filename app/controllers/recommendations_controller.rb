@@ -15,6 +15,28 @@ class RecommendationsController < ApplicationController
 
   def show
     @recommendation = Recommendation.find(params[:id])
+    @eventful_concert_output_array = Rails.cache.read("eventful_concert_array")
+    @eventful_comedy_output_array = Rails.cache.read("eventful_comedy_array")
+    @opentable_restaurant_output_array = Rails.cache.read("opentable_restaurant_array")
+    gmap_address_index = []
+    if @recommendation.event_1_check_box == "1"
+      gmap_address_index.append(0)
+    end
+    if @recommendation.event_2_check_box == "1"
+      gmap_address_index.append(1)
+    end
+    if @recommendation.event_3_check_box == "1"
+      gmap_address_index.append(2)
+    end
+    if @recommendation.event_4_check_box == "1"
+      gmap_address_index.append(3)
+    end
+    if @recommendation.event_5_check_box == "1"
+      gmap_address_index.append(4)
+    end
+    @gmap_address_index = gmap_address_index
+
+    
   end
 
 
