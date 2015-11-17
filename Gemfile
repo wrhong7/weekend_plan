@@ -6,6 +6,8 @@ end
 
 gem 'geocoder'
 
+gem 'dalli'
+
 gem 'gmaps4rails'
 
 gem 'twilio-ruby'
