@@ -14,13 +14,14 @@ class RecommendationsController < ApplicationController
   end
 
   def show
-   
+
 
 
     @recommendation = Recommendation.find(params[:id])
     @eventful_concert_output_array = Rails.cache.read("eventful_concert_array")
     @eventful_comedy_output_array = Rails.cache.read("eventful_comedy_array")
     @opentable_restaurant_output_array = Rails.cache.read("opentable_restaurant_array")
+    
     gmap_address_index = []
     if @recommendation.event_1_check_box == "1"
       gmap_address_index.append(0)
@@ -38,6 +39,42 @@ class RecommendationsController < ApplicationController
       gmap_address_index.append(4)
     end
     @gmap_address_index = gmap_address_index
+
+    gmap_address_index_2 = []
+    if @recommendation.event_6_check_box == "1"
+      gmap_address_index_2.append(0)
+    end
+    if @recommendation.event_7_check_box == "1"
+      gmap_address_index_2.append(1)
+    end
+    if @recommendation.event_8_check_box == "1"
+      gmap_address_index_2.append(2)
+    end
+    if @recommendation.event_9_check_box == "1"
+      gmap_address_index_2.append(3)
+    end
+    if @recommendation.event_10_check_box == "1"
+      gmap_address_index_2.append(4)
+    end
+    @gmap_address_index_2 = gmap_address_index_2
+
+    gmap_address_index_3 = []
+    if @recommendation.dine_1_check_box == "1"
+      gmap_address_index_3.append(0)
+    end
+    if @recommendation.dine_2_check_box == "1"
+      gmap_address_index_3.append(1)
+    end
+    if @recommendation.dine_3_check_box == "1"
+      gmap_address_index_3.append(2)
+    end
+    if @recommendation.dine_4_check_box == "1"
+      gmap_address_index_3.append(3)
+    end
+    if @recommendation.dine_5_check_box == "1"
+      gmap_address_index_3.append(4)
+    end
+    @gmap_address_index_3 = gmap_address_index_3
 
 
   end
