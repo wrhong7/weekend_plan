@@ -5,11 +5,11 @@ class MapsController < ApplicationController
   def show
     # @maps = Map.where(:recommendation_id => 87)
     @map = Map.find(params[:id])
-		@hash = Gmaps4rails.build_markers(@map) do |map, marker|
-		  marker.lat map.latitude
-		  marker.lng map.longitude
-		  marker.infowindow map.title
-		end
+		# @hash = Gmaps4rails.build_markers(@map) do |map, marker|
+		#   marker.lat map.latitude
+		#   marker.lng map.longitude
+		#   marker.infowindow map.title
+		# end
 	end
 
   def create
