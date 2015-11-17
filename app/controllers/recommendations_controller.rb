@@ -14,6 +14,20 @@ class RecommendationsController < ApplicationController
   end
 
   def show
+    @map = Map.where(:recommendation_id => params[:id])
+    @map.each do |map|
+      @hash = Gmaps4rails.build_markers(@map) do |map, marker|
+        marker.lat map.latitude
+        marker.lng map.longitude
+        marker.infowindow map.title
+      end
+    end
+
+
+    @mapnew = Map.new 
+
+
+
     @recommendation = Recommendation.find(params[:id])
     @eventful_concert_output_array = Rails.cache.read("eventful_concert_array")
     @eventful_comedy_output_array = Rails.cache.read("eventful_comedy_array")
@@ -36,7 +50,7 @@ class RecommendationsController < ApplicationController
     end
     @gmap_address_index = gmap_address_index
 
-    
+
   end
 
 
