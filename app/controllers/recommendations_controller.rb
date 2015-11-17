@@ -14,16 +14,16 @@ class RecommendationsController < ApplicationController
   end
 
   def show
-    # @map = Map.where(:recommendation_id => params[:id])
-    # @mapnew = Map.new
+    @map = Map.where(:recommendation_id => params[:id])
+    @mapnew = Map.new
 
-    # # @map.each do |map|
-    # #   @hash = Gmaps4rails.build_markers(@map) do |map, marker|
-    # #     marker.lat map.latitude
-    # #     marker.lng map.longitude
-    # #     marker.infowindow map.title
-    # #   end
-    end
+    # @map.each do |map|
+    #   @hash = Gmaps4rails.build_markers(@map) do |map, marker|
+    #     marker.lat map.latitude
+    #     marker.lng map.longitude
+    #     marker.infowindow map.title
+    #   end
+    # end
 
 
 
