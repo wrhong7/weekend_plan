@@ -6,6 +6,8 @@ end
 
 gem 'geocoder'
 
+gem 'onebox'
+
 
 
 gem 'dalli'

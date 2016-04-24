@@ -1,6 +1,7 @@
 class EventsController < ApplicationController
   require "rest-client"
   require "json"
+  require "onebox"
 
   def about
   end
@@ -23,8 +24,8 @@ class EventsController < ApplicationController
     end
   end
 
-  def show
-  	@event = Event.find(params[:id])
+  def show  
+    @event = Event.find(params[:id])
     eventful_api_key=ENV['EVENTFUL_API_KEY']
 		location = @event.location
     if location == "LA"
